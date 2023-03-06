@@ -4,11 +4,14 @@ import "./products-container.styles.scss";
 
 const ProductsContainer = ({ products }) => {
   return (
-    <div className="products-container">
-      {products.map((product) => (
-        <ProductItem key={product.id} product={product} />
-      ))}
-    </div>
+    <>
+      <h1 className="category-name">Category Name</h1>
+      <div className="products-container">
+        {products.map((product) => (
+          <ProductItem key={product.id} product={product} />
+        ))}
+      </div>
+    </>
   );
 };
 

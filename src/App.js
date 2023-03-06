@@ -1,59 +1,87 @@
-import ProductsContainer from "./components/products-container/products-container.component";
+import { Routes, Route } from "react-router-dom";
 
-import "./products.styles.scss";
+import Navigation from "./routes/navigation/navigation.component";
+import Home from "./routes/home/home.component";
+
+const products = [
+  {
+    id: 1,
+    title: "AirPods Pro",
+    imageUrl: process.env.PUBLIC_URL + "/images/airpods.png",
+  },
+  {
+    id: 2,
+    title: "Nike Air Huarache Le",
+    imageUrl: process.env.PUBLIC_URL + "/images/air-huarache-mens.png",
+  },
+  {
+    id: 3,
+    title: "AirTag",
+    imageUrl: process.env.PUBLIC_URL + "/images/airtag-single.png",
+  },
+  {
+    id: 4,
+    title: "iMac 2021",
+    imageUrl: process.env.PUBLIC_URL + "/images/imac-m1.png",
+  },
+  {
+    id: 5,
+    title: "iPhone 12 Pro",
+    imageUrl: process.env.PUBLIC_URL + "/images/iphone12pro.png",
+  },
+  {
+    id: 6,
+    title: "Jacket Canada Goose",
+    imageUrl: process.env.PUBLIC_URL + "/images/jacketcanada.png",
+  },
+  {
+    id: 7,
+    title: "PlayStation 5",
+    imageUrl: process.env.PUBLIC_URL + "/images/playstation5.png",
+  },
+  {
+    id: 8,
+    title: "Xbox Series S 512GB",
+    imageUrl: process.env.PUBLIC_URL + "/images/xboxseriess.png",
+  },
+];
 
 const App = () => {
-  const products = [
-    {
-      id: 1,
-      title: "Apollo Running Shop A",
-      imageUrl: process.env.PUBLIC_URL + "/images/airpods.png",
-    },
-    {
-      id: 2,
-      title: "Apollo Running Shop B",
-      imageUrl: process.env.PUBLIC_URL + "/images/air-huarache-mens.png",
-    },
-    {
-      id: 3,
-      title: "Apollo Running Shop C",
-      imageUrl: process.env.PUBLIC_URL + "/images/airtag-single.png",
-    },
-    {
-      id: 4,
-      title: "Apollo Running Shop D",
-      imageUrl: process.env.PUBLIC_URL + "/images/imac-m1.png",
-    },
-    {
-      id: 5,
-      title: "Apollo Running Shop E",
-      imageUrl: process.env.PUBLIC_URL + "/images/iphone12pro.png",
-    },
-    {
-      id: 6,
-      title: "Apollo Running Shop F",
-      imageUrl: process.env.PUBLIC_URL + "/images/jacketcanada.png",
-    },
-    {
-      id: 7,
-      title: "Apollo Running Shop G",
-      imageUrl: process.env.PUBLIC_URL + "/images/playstation5.png",
-    },
-    {
-      id: 8,
-      title: "Apollo Running Shop H",
-      imageUrl: process.env.PUBLIC_URL + "/images/xboxseriess.png",
-    },
-  ];
+  const filterProducts = (path) => {
+    switch (path) {
+      case "clothes":
+        return products.filter(
+          (product) => product.id === 2 || product.id === 6
+        );
+      case "tech":
+        return products.filter(
+          (product) =>
+            product.id === 1 ||
+            product.id === 3 ||
+            product.id === 4 ||
+            product.id === 5 ||
+            product.id === 7 ||
+            product.id === 8
+        );
+      default:
+        return products;
+    }
+  };
 
   return (
-    <>
-      <header></header>
-      <main>
-        <h1 className="category-name">Category Name</h1>
-        <ProductsContainer products={products} />
-      </main>
-    </>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home products={products} />} />
+        <Route
+          path="clothes"
+          element={<Home products={filterProducts("clothes")} />}
+        />
+        <Route
+          path="tech"
+          element={<Home products={filterProducts("tech")} />}
+        />
+      </Route>
+    </Routes>
   );
 };
 

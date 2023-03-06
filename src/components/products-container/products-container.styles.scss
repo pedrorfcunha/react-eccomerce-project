@@ -1,9 +1,25 @@
+.category-name {
+  height: 68px;
+  width: 320px;
+  margin: 80px 0 103px;
+  font-weight: 400;
+  font-size: 42px;
+  display: flex;
+  align-items: center;
+  color: #1d1f22;
+  position: relative;
+  left: max(calc(50% - 299px / 2 - 469.5px), 16px);
+  top: max(calc(50% - 68px / 2 - 562.5px), 16px);
+}
+
 .products-container {
-    background-color: #ffffff;
-    font-family: "Raleway";
-    display: grid;
-    grid-template-columns: 386px 386px 386px;
-    column-gap: 40px;
-    row-gap: 103px;
-    margin: 0 100px 190px;
-  }
+  max-width: 1240px;
+  background-color: #ffffff;
+  font-family: "Raleway";
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 386px);
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 103px;
+  margin: 0 auto 190px;
+}
