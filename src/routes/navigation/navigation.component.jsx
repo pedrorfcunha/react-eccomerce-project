@@ -51,8 +51,9 @@ const Navigation = () => {
           <ShopLogo />
         </Link>
         <div className="actions-container">
-          <div className="action-container"></div>
-          <div className="action-container"></div>
+          <div className="action-container">
+            <Link className="nav-link" to="sign-in">SIGN IN</Link>
+          </div>
           <div className="action-container">
             <Link className="actions-currency-logo" to="/">
               <CurrencyLogo />
