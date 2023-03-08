@@ -52,7 +52,9 @@ const Navigation = () => {
         </Link>
         <div className="actions-container">
           <div className="action-container">
-            <Link className="nav-link" to="sign-in">SIGN IN</Link>
+            <Link className={getLinkClass("/auth")} to="auth">
+            <span></span>SIGN IN<span className={getSpamClass("/auth")}></span>
+            </Link>
           </div>
           <div className="action-container">
             <Link className="actions-currency-logo" to="/">
