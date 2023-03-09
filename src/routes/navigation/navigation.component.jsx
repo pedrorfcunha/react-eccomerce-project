@@ -1,12 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
-import "./navigation.styles.scss";
+import { UserContext } from "../../contexts/user.context";
+
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
 import { ReactComponent as ArrowLogo } from "./../../assets/arrowlogo.svg";
 import { ReactComponent as CartLogo } from "./../../assets/cartlogo.svg";
 import { ReactComponent as CurrencyLogo } from "./../../assets/currencylogo.svg";
+
+import "./navigation.styles.scss";
 
 const Navigation = () => {
   const [currentPath, setCurrentPath] = useState("");
@@ -32,7 +36,9 @@ const Navigation = () => {
     }
   };
 
-  return (
+  const { currentUser } = useContext(UserContext);
+  
+ return (
     <>
       <header className="navigation">
         <div className="nav-links-container">
@@ -52,9 +58,15 @@ const Navigation = () => {
         </Link>
         <div className="actions-container">
           <div className="action-container">
-            <Link className={getLinkClass("/auth")} to="auth">
-            <span></span>SIGN IN<span className={getSpamClass("/auth")}></span>
-            </Link>
+            {currentUser ? (
+              <span onClick={signOutUser} className={getLinkClass("/auth")}><span></span>SIGN OUT
+              <span className={getSpamClass("/auth")}></span></span>
+            ) : (
+              <Link className={getLinkClass("/auth")} to="auth">
+                <span></span>SIGN IN
+                <span className={getSpamClass("/auth")}></span>
+              </Link>
+            )}
           </div>
           <div className="action-container">
             <Link className="actions-currency-logo" to="/">
