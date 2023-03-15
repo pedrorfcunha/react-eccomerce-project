@@ -1,10 +1,10 @@
 import ProductsContainer from "../../components/products-container/products-container.component";
 
-const Home = ({products}) => {
+const Home = ({category}) => {
    return (
     <>
       <main>
-        <ProductsContainer products={products} />
+        <ProductsContainer category={category} />
       </main>
     </>
   );
