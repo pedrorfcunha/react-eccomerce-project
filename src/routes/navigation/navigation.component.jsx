@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
 import { UserContext } from "../../contexts/user.context";
+import { CartContext } from "../../contexts/cart.context";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -37,8 +38,11 @@ const Navigation = () => {
   };
 
   const { currentUser } = useContext(UserContext);
-  
- return (
+  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+
+  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+
+  return (
     <>
       <header className="navigation">
         <div className="nav-links-container">
@@ -59,8 +63,10 @@ const Navigation = () => {
         <div className="actions-container">
           <div className="action-container">
             {currentUser ? (
-              <span onClick={signOutUser} className={getLinkClass("/auth")}><span></span>SIGN OUT
-              <span className={getSpamClass("/auth")}></span></span>
+              <span onClick={signOutUser} className={getLinkClass("/auth")}>
+                <span></span>SIGN OUT
+                <span className={getSpamClass("/auth")}></span>
+              </span>
             ) : (
               <Link className={getLinkClass("/auth")} to="auth">
                 <span></span>SIGN IN
@@ -77,9 +83,9 @@ const Navigation = () => {
             </Link>
           </div>
           <div className="action-container">
-            <Link className="actions-cart-logo" to="/">
+            <div className="actions-cart-logo" onClick={toggleIsCartOpen}>
               <CartLogo />
-            </Link>
+            </div>
           </div>
         </div>
       </header>

@@ -5,6 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import App from "./App";
 import { UserProvider } from "./contexts/user.context";
+import { CartProvider } from "./contexts/cart.context";
 
 import "./index.scss";
 
@@ -19,7 +20,9 @@ root.render(
     <ApolloProvider client={client}>
       <BrowserRouter>
         <UserProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </UserProvider>
       </BrowserRouter>
     </ApolloProvider>
