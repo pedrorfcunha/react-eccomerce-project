@@ -1,0 +1,37 @@
+.product-description-container {
+  display: flex;
+}
+
+.product-img-album {
+  display: flex;
+  flex-direction: column;
+
+  .mini-img {
+    width: 79px;
+    height: 80px;
+    left: 100px;
+    top: 160px;
+  }
+}
+
+.main-img {
+  width: 610px;
+  height: 511px;
+}
+
+.product-details-container {
+  display: flex;
+  flex-direction: column;
+
+  width: 292px;
+  height: 595px;
+
+  .description {
+    width: 292px;
+    height: 103px;
+
+    li {
+        list-style: none;
+      }
+  }
+}
