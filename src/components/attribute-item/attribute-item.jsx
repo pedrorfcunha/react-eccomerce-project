@@ -1,7 +1,17 @@
+import { useState } from "react";
+
 import "./attribute-item.styles.scss";
 
 const AttributeItem = ({ attribute }) => {
   const { items, name } = attribute;
+
+  const [selectedBox, setSelectedBox] = useState();
+
+  const toggleSelectedBox = (item) => {
+    setSelectedBox(item);
+    console.log(item);
+    console.log(selectedBox);
+  };
 
   const getItemClass = (name) => {
     if (name === "Color") {
@@ -23,8 +33,12 @@ const AttributeItem = ({ attribute }) => {
           return (
             <span
               key={item.id}
-              className="attribute-selector-box"
+              className={
+                "attribute-selector-box" +
+                (selectedBox === item.id ? " selected-box" : "")
+              }
               style={itemStyle}
+              onClick={() => toggleSelectedBox(item.id)}
             >
               {item.value}
             </span>

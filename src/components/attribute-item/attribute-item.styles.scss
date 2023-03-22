@@ -29,6 +29,15 @@
     align-items: center;
     text-align: center;
     letter-spacing: 0.05em;
+
+    &.selected-box {
+      background-color: #1d1f22;
+      color: #ffffff;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -42,6 +51,18 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    color: transparent;    
+    color: transparent;
+    font-size: 0;
+    border: 0.001px solid #f3f3f3;
+
+    &.selected-box {
+      border: 1px solid #ffffff;
+      outline: 1px solid #5ece7b;
+      outline-offset: 0px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

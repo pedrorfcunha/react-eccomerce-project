@@ -5,8 +5,7 @@ import "./attributes-container.styles.scss";
 
 const AttributesContainer = ({ product }) => {
   const { attributes, brand, description, name, prices } = product;
-  console.log(attributes);
-
+  
   return (
     <div className="attributes-container">
       <h2 className="product-brand">{brand}</h2>
