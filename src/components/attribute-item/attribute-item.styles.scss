@@ -1,0 +1,47 @@
+.attribute-title {
+  height: 18px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-family: "Roboto Condensed";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.attribute-selector-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  .attribute-selector-box {
+    display: flex;
+    justify-content: center;
+    width: 63px;
+    height: 45px;
+    border: 1px solid #1d1f22;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+}
+
+.attribute-color-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  .attribute-selector-box {
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: transparent;    
+  }
+}

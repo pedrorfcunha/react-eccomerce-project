@@ -1,0 +1,30 @@
+.product-detail-container {
+  width: 1240px;
+  margin: 82px auto;
+  padding-right: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-img-album {
+  display: flex;
+  flex-direction: column;
+
+  .mini-img {
+    width: 79px;
+    height: 80px;
+    margin-bottom: 32px;              
+    object-fit: scale-down;    
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+    }
+  }
+}
+
+.main-img {
+  width: 610px;
+  height: 511px;
+  object-fit: scale-down;
+}

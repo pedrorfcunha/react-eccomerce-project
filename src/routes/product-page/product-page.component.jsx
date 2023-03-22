@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import Button from "../../components/button/button.component";
+import ProductDetail from "../../components/product-detail-container/product-detail-container.component";
 
 import "./product-page.styles.scss";
 
@@ -36,8 +36,7 @@ const GET_PRODUCT_DETAILS = gql`
 `;
 
 const ProductPage = () => {
-  const [product, setProduct] = useState([]);
-  const { attributes, brand, description, gallery, name, prices } = product;
+  const [product, setProduct] = useState([]);  
 
   const { id } = useParams();
 
@@ -54,27 +53,10 @@ const ProductPage = () => {
 
       setProduct(product);
     }
-  }, [data]);
-  console.log(product);
+  }, [data]);  
 
   return (
-    <div className="product-description-container">
-      <div className="product-img-album">
-        {gallery?.map((image) => (
-          <img className="mini-img" src={image} key={image}></img>
-        ))}
-      </div>
-      <div className="image-container">
-        <img className="main-img" src={gallery} alt={name}></img>
-      </div>
-      <div className="product-details-container">
-        <h2>{brand}</h2>
-        <h3>{name}</h3>
-        <div className="atributtes-container"></div>
-        <Button>ADD TO CART</Button>
-        <div className="description" dangerouslySetInnerHTML={{ __html: description }}></div>
-      </div>
-    </div>
+    <ProductDetail product={product}/>
   );
 };
 
