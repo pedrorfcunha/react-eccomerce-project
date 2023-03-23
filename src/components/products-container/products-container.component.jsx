@@ -26,7 +26,7 @@ const ProductsContainer = ({ category }) => {
 
   return (
     <>
-      <h1 className="category-name">Category Name</h1>
+      <h1 className="category-name">{category}</h1>
       <div className="products-container">
         {products.map((product) => (
           <ProductItem key={product.id} product={product} />
