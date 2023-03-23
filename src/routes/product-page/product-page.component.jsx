@@ -1,42 +1,14 @@
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import ProductDetail from "../../components/product-detail-container/product-detail-container.component";
+import { GET_PRODUCT_DETAILS } from "../../data/shop-data";
 
 import "./product-page.styles.scss";
 
-const GET_PRODUCT_DETAILS = gql`
-  query getProductDetails($id: String!) {
-    product(id: $id) {
-      id
-      name
-      gallery
-      description
-      attributes {
-        id
-        name
-        type
-        items {
-          displayValue
-          value
-          id
-        }
-      }
-      prices {
-        currency {
-          label
-          symbol
-        }
-        amount
-      }
-      brand
-    }
-  }
-`;
-
 const ProductPage = () => {
-  const [product, setProduct] = useState([]);  
+  const [product, setProduct] = useState([]);
 
   const { id } = useParams();
 
@@ -53,11 +25,9 @@ const ProductPage = () => {
 
       setProduct(product);
     }
-  }, [data]);  
+  }, [data]);
 
-  return (
-    <ProductDetail product={product}/>
-  );
+  return <ProductDetail product={product} />;
 };
 
 export default ProductPage;
