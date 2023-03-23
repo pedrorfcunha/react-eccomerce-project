@@ -1,0 +1,60 @@
+.attributes-container {
+  display: flex;
+  flex-direction: column;
+  width: 292px;
+  
+  .product-brand {
+    width: 292px;
+    height: 27px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 27px;
+  }
+
+  .product-name {
+    margin-top: 8px;
+    margin-bottom: 43px;
+    width: 292px;
+    height: 27px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 27px;
+  }
+
+  .attribute-items {
+    min-height: 94px;
+  }
+
+  .price-title {
+    height: 18px;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    font-family: "Roboto Condensed";
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .price-value {
+    height: 46px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-family: "Raleway";
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .product-description {
+    width: 292px;
+    height: 103px;
+    margin-top: 20px;
+
+    li {
+      list-style: none;
+    }
+  }
+}
