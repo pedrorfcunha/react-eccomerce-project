@@ -13,66 +13,66 @@
     justify-content: flex-start;
   }
 
-  .nav-link {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 10px 15px;
-    font-size: 16px;
+  .nav-link-box {
+    height: 56px;
+    margin-top: 24px;
+  }
+
+  .nav-link-name {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+    padding: 4px 16px 32px;
+    font-family: inherit;
+    font-style: normal;
     font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    align-items: center;
+    text-align: center;
+    line-break: strict;
+    text-transform: uppercase;
     color: #1d1f22;
 
-    &.active {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .nav-link-box-active {
+    height: 56px;
+    margin-top: 24px;
+    border-bottom: 2px solid #5ece7b;
+    color: #5ece7b;
+    font-weight: 600;
+    //display: flex;
+
+    .nav-link-name {
       color: #5ece7b;
       font-weight: 600;
-    }
-
-    .underline {
-      width: calc(100% + 32px);
-      height: 2px;
-      background-color: #5ece7b;
     }
   }
 
   .actions-container {
     display: flex;
+    align-items: center;
     gap: 22px;
     width: 224px;
-    height: 40px;
+    height: 100%;
     right: 101px;
-    top: 23px;
-
-    .nav-link {
-      margin: 0;
-      text-align: center;
-    }
 
     .action-container {
-      width: 60px;
-      height: 40px;
+      height: 56px;
       display: flex;
       align-items: center;
       flex-direction: row;
     }
 
-    .actions-currency-logo {
+    .action-logo {
       display: flex;
       align-items: center;
-    }
-
-    .actions-arrow-logo {
-      display: flex;
-      align-items: center;
-    }
-
-    .actions-cart-logo {
-      display: flex;
-      align-items: center;
+      
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
