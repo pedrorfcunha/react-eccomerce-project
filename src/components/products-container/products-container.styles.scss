@@ -9,7 +9,9 @@
   color: #1d1f22;
   position: relative;
   left: max(calc(50% - 299px / 2 - 469.5px), 16px);
-  top: max(calc(50% - 68px / 2 - 562.5px), 16px);
+  top: max(calc(50% - 68px / 2 - 562.5px), 16px);  
+  text-transform: capitalize;
+  
 }
 
 .products-container {
