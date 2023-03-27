@@ -1,13 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
-import { useQuery } from "@apollo/client";
 
 import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
-
-import { GET_PRODUCTS } from "../../data/shop-data";
 
 import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
 import { ReactComponent as ArrowLogo } from "./../../assets/arrowlogo.svg";
@@ -16,19 +13,7 @@ import { ReactComponent as CurrencyLogo } from "./../../assets/currencylogo.svg"
 
 import "./navigation.styles.scss";
 
-const Navigation = () => {
-  const [categories, setCategories] = useState([]);
-
-  const response = useQuery(GET_PRODUCTS);
-  const { loading, error, data } = response;
-
-  useEffect(() => {
-    if (data) {
-      const { categories } = data;
-      setCategories(categories);
-    }
-  }, [data]);
-
+const Navigation = ({categories}) => {
   const [selectedPage, setSelectedPage] = useState("all");
 
   const toggleSelectedPage = (category) => {
