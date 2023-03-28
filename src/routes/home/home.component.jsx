@@ -7,14 +7,14 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 
 import ProductsContainer from "../../components/products-container/products-container.component";
 
-const Home = ({ category }) => {
+const Home = () => {
   const { isCartOpen } = useContext(CartContext);
 
   return (
     <>
       <main>
         {isCartOpen && <Modal><CartDropdown /></Modal>}
-        <ProductsContainer category={category} />
+        <ProductsContainer  />
       </main>
     </>
   );
