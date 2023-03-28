@@ -1,5 +1,8 @@
 import { useState, useEffect, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
+
+import { useQuery } from "@apollo/client";
+import { GET_PRODUCTS } from "../../data/shop-data";
 
 import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
@@ -13,12 +16,34 @@ import { ReactComponent as CurrencyLogo } from "./../../assets/currencylogo.svg"
 
 import "./navigation.styles.scss";
 
-const Navigation = ({categories}) => {
-  const [selectedPage, setSelectedPage] = useState("all");
-
+const Navigation = () => {  
+  const [categories, setCategories] = useState([]);
+  
+  const response = useQuery(GET_PRODUCTS);
+  const { loading, error, data } = response;
+  
+  useEffect(() => {
+    if (data) {
+      const { categories } = data;
+      setCategories(categories);
+    }
+  }, [data]);
+  
+  const { pathname } = useLocation();
+  const currentPage = pathname.slice(1);
+  
+  const [selectedPage, setSelectedPage] = useState(currentPage);
+  
   const toggleSelectedPage = (category) => {
     setSelectedPage(category);
   };
+
+  useEffect(() => {
+    if (data && selectedPage === "") {
+      const { categories } = data;
+      setSelectedPage(categories[0].name);
+    }
+  }, [data, selectedPage]);
 
   const { currentUser } = useContext(UserContext);
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
@@ -45,7 +70,7 @@ const Navigation = ({categories}) => {
             </div>
           ))}
         </div>
-        <div onClick={() => toggleSelectedPage("all")}>
+        <div onClick={() => toggleSelectedPage("")}>
           <Link className="logo-container" to="/">
             <ShopLogo />
           </Link>
@@ -54,7 +79,10 @@ const Navigation = ({categories}) => {
           <div className="action-container">
             {currentUser ? (
               <div className="nav-link-box">
-                <span onClick={signOutUser} className="nav-link-name"> SIGN OUT</span>
+                <span onClick={signOutUser} className="nav-link-name">
+                  {" "}
+                  SIGN OUT
+                </span>
               </div>
             ) : (
               <div

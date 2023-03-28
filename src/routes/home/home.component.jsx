@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useParams } from "react-router-dom";
 
 import { CartContext } from "../../contexts/cart.context";
 
@@ -7,14 +8,14 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 
 import ProductsContainer from "../../components/products-container/products-container.component";
 
-const Home = ({ category }) => {
+const Home = () => {
   const { isCartOpen } = useContext(CartContext);
 
   return (
     <>
       <main>
         {isCartOpen && <Modal><CartDropdown /></Modal>}
-        <ProductsContainer category={category} />
+        <ProductsContainer  />
       </main>
     </>
   );
