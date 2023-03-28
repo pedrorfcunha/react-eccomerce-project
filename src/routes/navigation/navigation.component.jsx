@@ -4,12 +4,10 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../../data/shop-data";
 
-import { UserContext } from "../../contexts/user.context";
 import { CartContext } from "../../contexts/cart.context";
 
-import { signOutUser } from "../../utils/firebase/firebase.utils";
-
-import NavLink from "../../components/nav-link/nav-link.component";
+import NavLinkButton from "../../components/nav-link-button/nav-link-button.component";
+import NavSignInButton from "../../components/nav-sign-in-button/nav-sign-in-button.component";
 
 import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
 import { ReactComponent as ArrowLogo } from "./../../assets/arrowlogo.svg";
@@ -45,7 +43,6 @@ const Navigation = () => {
     }
   }, [data, currentPage]);
 
-  const { currentUser } = useContext(UserContext);
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
   const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
@@ -55,9 +52,8 @@ const Navigation = () => {
       <header className="navigation">
         <div className="nav-links-container">
           {categories.map((category) => (
-            <NavLink
-              path={category.name}
-              description={category.name}
+            <NavLinkButton
+              category={category}
               selectedPage={selectedPage}
               key={category.name}
             />
@@ -69,22 +65,7 @@ const Navigation = () => {
           </Link>
         </div>
         <div className="actions-container">
-          <div className="action-container">
-            {currentUser ? (
-              <NavLink
-                path={"auth"}
-                description={"SIGN OUT"}
-                selectedPage={selectedPage}
-                click={signOutUser}
-              />
-            ) : (
-              <NavLink
-                path={"auth"}
-                description={"SIGN IN"}
-                selectedPage={selectedPage}
-              />              
-            )}
-          </div>
+          <NavSignInButton selectedPage={selectedPage} />
           <div className="action-container">
             <Link className="action-logo" to="/">
               <CurrencyLogo />
