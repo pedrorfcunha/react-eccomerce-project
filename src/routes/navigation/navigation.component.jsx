@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
+
+import { CurrencySwitcherContext } from "../../contexts/currency-switcher.context";
 
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../../data/shop-data";
@@ -8,9 +10,10 @@ import NavLinkButton from "../../components/nav-link-button/nav-link-button.comp
 import NavSignInButton from "../../components/nav-sign-in-button/nav-sign-in-button.component";
 import CurrencySwitcherLogo from "../../components/currency-switcher-logo/currency-switcher-logo.component";
 import NavCartLogo from "../../components/nav-cart-logo/nav-cart-logo.component";
+import CurrencySwitcherDropdown from "../../components/currency-switcher-dropdown/currency-switcher-dropdown.component";
+import CurrencyModal from "../../components/currency-modal/currency-modal.component";
 
 import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
-
 
 import "./navigation.styles.scss";
 
@@ -41,6 +44,8 @@ const Navigation = () => {
     }
   }, [data, currentPage]);
 
+  const { isCurrencySwitcherOpen } = useContext(CurrencySwitcherContext);
+
   return (
     <>
       <header className="navigation">
@@ -61,7 +66,8 @@ const Navigation = () => {
         <div className="actions-container">
           <NavSignInButton selectedPage={selectedPage} />
           <CurrencySwitcherLogo />
-          <NavCartLogo />          
+          {isCurrencySwitcherOpen && <CurrencyModal><CurrencySwitcherDropdown /></CurrencyModal>}          
+          <NavCartLogo />
         </div>
       </header>
       <Outlet />

@@ -2,9 +2,9 @@ import { useContext } from "react";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import "./modal.styles.scss";
+import "./cart-modal.styles.scss";
 
-const Modal = ({ children }) => {
+const CartModal = ({ children }) => {
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
   const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
@@ -19,4 +19,4 @@ const Modal = ({ children }) => {
   );
 };
 
-export default Modal;
+export default CartModal;

@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import Modal from "../../components/modal/modal.component";
+import CartModal from "../../components/modal/cart-modal.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
 import ProductsContainer from "../../components/products-container/products-container.component";
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <main>
-        {isCartOpen && <Modal><CartDropdown /></Modal>}
+        {isCartOpen && <CartModal><CartDropdown /></CartModal>}
         <ProductsContainer  />
       </main>
     </>

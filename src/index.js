@@ -6,6 +6,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { CartProvider } from "./contexts/cart.context";
+import { CurrencySwitcherProvider } from "./contexts/currency-switcher.context";
 
 import "./index.scss";
 
@@ -21,7 +22,9 @@ root.render(
       <BrowserRouter>
         <UserProvider>
           <CartProvider>
-            <App />
+            <CurrencySwitcherProvider>
+              <App />
+            </CurrencySwitcherProvider>
           </CartProvider>
         </UserProvider>
       </BrowserRouter>
