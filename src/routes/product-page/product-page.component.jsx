@@ -1,8 +1,13 @@
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
+import { CartContext } from "../../contexts/cart.context";
+
+import Modal from "../../components/modal/modal.component";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import ProductDetail from "../../components/product-detail-container/product-detail-container.component";
+
 import { GET_PRODUCT_DETAILS } from "../../data/shop-data";
 
 import "./product-page.styles.scss";
@@ -27,7 +32,18 @@ const ProductPage = () => {
     }
   }, [data]);
 
-  return <ProductDetail product={product} />;
+  const { isCartOpen } = useContext(CartContext);
+
+  return (
+    <>
+      {isCartOpen && (
+        <Modal>
+          <CartDropdown />
+        </Modal>
+      )}
+      <ProductDetail product={product} />;
+    </>
+  );
 };
 
 export default ProductPage;
