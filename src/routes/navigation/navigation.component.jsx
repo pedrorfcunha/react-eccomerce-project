@@ -1,17 +1,16 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../../data/shop-data";
 
-import { CartContext } from "../../contexts/cart.context";
-
 import NavLinkButton from "../../components/nav-link-button/nav-link-button.component";
 import NavSignInButton from "../../components/nav-sign-in-button/nav-sign-in-button.component";
 import CurrencySwitcherLogo from "../../components/currency-switcher-logo/currency-switcher-logo.component";
+import NavCartLogo from "../../components/nav-cart-logo/nav-cart-logo.component";
 
 import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
-import { ReactComponent as CartLogo } from "./../../assets/cartlogo.svg";
+
 
 import "./navigation.styles.scss";
 
@@ -42,10 +41,6 @@ const Navigation = () => {
     }
   }, [data, currentPage]);
 
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
-
-  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
-
   return (
     <>
       <header className="navigation">
@@ -66,11 +61,7 @@ const Navigation = () => {
         <div className="actions-container">
           <NavSignInButton selectedPage={selectedPage} />
           <CurrencySwitcherLogo />
-          <div className="action-container">
-            <div className="action-logo" onClick={toggleIsCartOpen}>
-              <CartLogo />
-            </div>
-          </div>
+          <NavCartLogo />          
         </div>
       </header>
       <Outlet />
