@@ -8,11 +8,10 @@ import { CartContext } from "../../contexts/cart.context";
 
 import NavLinkButton from "../../components/nav-link-button/nav-link-button.component";
 import NavSignInButton from "../../components/nav-sign-in-button/nav-sign-in-button.component";
+import CurrencySwitcherLogo from "../../components/currency-switcher-logo/currency-switcher-logo.component";
 
 import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
-import { ReactComponent as ArrowLogo } from "./../../assets/arrowlogo.svg";
 import { ReactComponent as CartLogo } from "./../../assets/cartlogo.svg";
-import { ReactComponent as CurrencyLogo } from "./../../assets/currencylogo.svg";
 
 import "./navigation.styles.scss";
 
@@ -66,14 +65,7 @@ const Navigation = () => {
         </div>
         <div className="actions-container">
           <NavSignInButton selectedPage={selectedPage} />
-          <div className="action-container">
-            <Link className="action-logo" to="/">
-              <CurrencyLogo />
-            </Link>
-            <Link className="action-logo" to="/">
-              <ArrowLogo />
-            </Link>
-          </div>
+          <CurrencySwitcherLogo />
           <div className="action-container">
             <div className="action-logo" onClick={toggleIsCartOpen}>
               <CartLogo />
