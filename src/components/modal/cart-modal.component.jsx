@@ -11,7 +11,8 @@ const CartModal = ({ children }) => {
 
   return (
     <>
-      <div className="backdrop" onClick={toggleIsCartOpen}></div>
+      <div className="nav-cart-backdrop" onClick={toggleIsCartOpen}></div>
+      <div className="cart-backdrop" onClick={toggleIsCartOpen}></div>
       <dialog open={true} className="modal">
         {children}
       </dialog>

@@ -7,16 +7,13 @@ import "./currency-modal.styles.scss";
 const CurrencyModal = ({ children }) => {
   const { isCurrencySwitcherOpen, setIsCurrencySwitcherOpen } = useContext(
     CurrencySwitcherContext
-  );
-
-  const toggleIsCurrencySwitcherOpen = () =>
-    setIsCurrencySwitcherOpen(!isCurrencySwitcherOpen);
+  );  
 
   return (
     <>
       <div
         className="currency-backdrop"
-        onClick={toggleIsCurrencySwitcherOpen}
+        onClick={() => setIsCurrencySwitcherOpen(!isCurrencySwitcherOpen)}
       ></div>
       <dialog open={true} className="currency-modal">
         {children}

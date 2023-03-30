@@ -9,13 +9,13 @@ import { ReactComponent as ArrowLogo } from "./../../assets/arrowlogo.svg";
 const CurrencySwitcherLogo = () => {
   const { isCurrencySwitcherOpen, setIsCurrencySwitcherOpen } = useContext(
     CurrencySwitcherContext
-  );
-
-  const toggleIsCurrencySwitcherOpen = () =>
-    setIsCurrencySwitcherOpen(!isCurrencySwitcherOpen);
+  );  
 
   return (
-    <div className="action-container" onClick={toggleIsCurrencySwitcherOpen}>
+    <div
+      className="action-container"
+      onClick={() => setIsCurrencySwitcherOpen(!isCurrencySwitcherOpen)}
+    >
       <div className="action-logo">
         <p className="currency-symbol">$</p>
       </div>
