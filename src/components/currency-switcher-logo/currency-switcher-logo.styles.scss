@@ -1,0 +1,33 @@
+.action-container {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.action-logo {
+  height: 56px;
+  margin-top: 28.5px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .currency-symbol {
+    font-family: "Raleway";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    display: flex;
+    padding: 4px 10px 32px;
+    align-items: center;
+    text-align: center;
+    color: #1d1f22;
+  }
+
+  .arrow-symbol {
+    margin: 6px 0px 32px;
+  }
+}

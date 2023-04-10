@@ -20,21 +20,5 @@
     width: 224px;
     height: 100%;
     right: 101px;
-
-    .action-container {
-      height: 56px;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-    }
-
-    .action-logo {
-      display: flex;
-      align-items: center;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
   }
 }

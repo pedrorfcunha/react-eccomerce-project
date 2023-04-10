@@ -2,16 +2,17 @@ import { useContext } from "react";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import "./modal.styles.scss";
+import "./cart-modal.styles.scss";
 
-const Modal = ({ children }) => {
+const CartModal = ({ children }) => {
   const { isCartOpen, setIsCartOpen } = useContext(CartContext);
 
   const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
 
   return (
     <>
-      <div className="backdrop" onClick={toggleIsCartOpen}></div>
+      <div className="nav-cart-backdrop" onClick={toggleIsCartOpen}></div>
+      <div className="cart-backdrop" onClick={toggleIsCartOpen}></div>
       <dialog open={true} className="modal">
         {children}
       </dialog>
@@ -19,4 +20,4 @@ const Modal = ({ children }) => {
   );
 };
 
-export default Modal;
+export default CartModal;

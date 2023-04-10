@@ -1,18 +1,19 @@
 import { useState, useEffect, useContext } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 
+import { CurrencySwitcherContext } from "../../contexts/currency-switcher.context";
+
 import { useQuery } from "@apollo/client";
 import { GET_PRODUCTS } from "../../data/shop-data";
 
-import { CartContext } from "../../contexts/cart.context";
-
 import NavLinkButton from "../../components/nav-link-button/nav-link-button.component";
 import NavSignInButton from "../../components/nav-sign-in-button/nav-sign-in-button.component";
+import CurrencySwitcherLogo from "../../components/currency-switcher-logo/currency-switcher-logo.component";
+import NavCartLogo from "../../components/nav-cart-logo/nav-cart-logo.component";
+import CurrencySwitcherDropdown from "../../components/currency-switcher-dropdown/currency-switcher-dropdown.component";
+import CurrencyModal from "../../components/currency-modal/currency-modal.component";
 
 import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
-import { ReactComponent as ArrowLogo } from "./../../assets/arrowlogo.svg";
-import { ReactComponent as CartLogo } from "./../../assets/cartlogo.svg";
-import { ReactComponent as CurrencyLogo } from "./../../assets/currencylogo.svg";
 
 import "./navigation.styles.scss";
 
@@ -43,9 +44,7 @@ const Navigation = () => {
     }
   }, [data, currentPage]);
 
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
-
-  const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
+  const { isCurrencySwitcherOpen } = useContext(CurrencySwitcherContext);
 
   return (
     <>
@@ -66,19 +65,9 @@ const Navigation = () => {
         </div>
         <div className="actions-container">
           <NavSignInButton selectedPage={selectedPage} />
-          <div className="action-container">
-            <Link className="action-logo" to="/">
-              <CurrencyLogo />
-            </Link>
-            <Link className="action-logo" to="/">
-              <ArrowLogo />
-            </Link>
-          </div>
-          <div className="action-container">
-            <div className="action-logo" onClick={toggleIsCartOpen}>
-              <CartLogo />
-            </div>
-          </div>
+          <CurrencySwitcherLogo />
+          {isCurrencySwitcherOpen && <CurrencyModal><CurrencySwitcherDropdown /></CurrencyModal>}          
+          <NavCartLogo />
         </div>
       </header>
       <Outlet />

@@ -1,0 +1,21 @@
+.action-container {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.action-logo {
+  height: 56px;
+  margin-top: 28.5px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .cart-symbol {
+    margin: 6px 0px 32px;
+  }
+}

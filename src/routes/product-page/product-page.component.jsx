@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from "react";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import Modal from "../../components/modal/modal.component";
+import CartModal from "../../components/modal/cart-modal.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import ProductDetail from "../../components/product-detail-container/product-detail-container.component";
 
@@ -37,9 +37,9 @@ const ProductPage = () => {
   return (
     <>
       {isCartOpen && (
-        <Modal>
+        <CartModal>
           <CartDropdown />
-        </Modal>
+        </CartModal>
       )}
       <ProductDetail product={product} />;
     </>
