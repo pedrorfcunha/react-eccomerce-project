@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./attribute-item.styles.scss";
 
-const AttributeItem = ({ attribute }) => {
+const AttributeItem = ({ attribute, display }) => {
   const { items, name } = attribute;
 
   const [selectedBox, setSelectedBox] = useState();
@@ -11,8 +11,16 @@ const AttributeItem = ({ attribute }) => {
     setSelectedBox(item);
   };
 
+  const selectAttributeComponentStyle = (display) => {
+    if (display === "pdp") {
+      return "pdp-attribute-item";
+    } else if (display === "cart") {
+      return "cart-attribute-item";
+    }
+  };
+
   return (
-    <div className="attribute-item">
+    <div className={selectAttributeComponentStyle(display)}>
       <h4 className="attribute-title">{name}</h4>
       <div
         className={

@@ -20,7 +20,7 @@ const AttributesContainer = ({ product }) => {
       <h3 className="product-name">{name}</h3>
       <div className="attribute-items">
         {attributes?.map((attribute) => (
-          <AttributeItem key={attribute.id} attribute={attribute} />
+          <AttributeItem key={attribute.id} attribute={attribute} display={"pdp"}/>
         ))}
       </div>
       <div>

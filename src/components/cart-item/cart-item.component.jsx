@@ -1,7 +1,9 @@
+import AttributeItem from "../attribute-item/attribute-item.component";
+
 import "./cart-item.styles.scss";
 
 const CartItem = ({ cartItem }) => {
-  const { brand, name, price, gallery, quantity } = cartItem;
+  const { attributes, name, price, gallery, quantity } = cartItem;
   console.log(cartItem);
 
   return (
@@ -12,8 +14,15 @@ const CartItem = ({ cartItem }) => {
             <h3 className="name">{name}</h3>
             <span className="price">$50.00</span>
           </div>
-          <span className="attribute">atribute 1</span>
-          <span className="attribute">atribute 2</span>
+          <div className="attributes-box">
+            {attributes?.map((attribute) => (
+              <AttributeItem
+                key={attribute.id}
+                attribute={attribute}
+                display={"cart"}
+              />
+            ))}
+          </div>
         </div>
         <div className="quantity-display">
           <button className="quantity-btn">+</button>
