@@ -1,4 +1,4 @@
-.pdp-attribute-item {
+.attribute-item {
   .attribute-title {
     height: 18px;
     margin-top: 0;
@@ -23,7 +23,6 @@
       height: 45px;
       border: 1px solid #1d1f22;
       font-family: "Source Sans Pro";
-      font-style: normal;
       font-weight: 400;
       font-size: 16px;
       line-height: 18px;
@@ -52,83 +51,6 @@
       justify-content: center;
       width: 32px;
       height: 32px;
-      color: transparent;
-      font-size: 0;
-      border: 0.001px solid #f3f3f3;
-
-      &.selected-box {
-        border: 1px solid #ffffff;
-        outline: 1px solid #5ece7b;
-        outline-offset: 0px;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-.cart-attribute-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-
-  .attribute-title {
-    margin: 0;
-    font-family: "Raleway";
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    color: #1d1f22;
-    text-transform: capitalize;
-  }
-
-  .attribute-noncolor-container {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-
-    .attribute-selector-box {
-      display: flex;
-      justify-content: center;
-      min-width: 24px;
-      height: 24px;
-      border: 1px solid #1d1f22;
-      font-family: "Source Sans Pro";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 160%;
-      align-items: center;
-      text-align: center;
-      letter-spacing: 0.05em;
-      padding: 1.5px;
-
-      &.selected-box {
-        background-color: #1d1f22;
-        color: #ffffff;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-
-  .attribute-color-container {
-    display: flex;
-    gap: 8px;
-    margin-left: 1px;
-
-    .attribute-selector-box {
-      display: flex;
-      justify-content: center;
-      width: 16px;
-      height: 16px;
       color: transparent;
       font-size: 0;
       border: 0.001px solid #f3f3f3;

@@ -1,19 +1,18 @@
-import { useState } from "react";
+import "./cart-attribute-item.styles.scss";
 
-import "./attribute-item.styles.scss";
+const CartAttributeItem = ({ attribute, display, selectedAttributes }) => {
+  const { items, name } = attribute;
 
-const AttributeItem = ({ attribute, onSelect }) => {
-  const { items, name, id } = attribute;
-
-  const [selectedBox, setSelectedBox] = useState();
-
-  const toggleSelectedBox = (selectedValue) => {
-    setSelectedBox(selectedValue);
-    onSelect(id, selectedValue);
+  const selectAttributeComponentStyle = (display) => {
+    if (display === "checkout") {
+      return "checkout-attribute-item";
+    } else if (display === "cart") {
+      return "cart-attribute-item";
+    }
   };
 
   return (
-    <div className="attribute-item">
+    <div className={selectAttributeComponentStyle(display)}>
       <h4 className="attribute-title">{name}</h4>
       <div
         className={
@@ -27,10 +26,9 @@ const AttributeItem = ({ attribute, onSelect }) => {
             key={item.id}
             className={
               "attribute-selector-box" +
-              (selectedBox === item.id ? " selected-box" : "")
+              (selectedAttributes[name] === item.id ? " selected-box" : "")
             }
             style={name === "Color" ? { backgroundColor: item.value } : {}}
-            onClick={() => toggleSelectedBox(item.id)}
           >
             {item.value}
           </span>
@@ -40,4 +38,4 @@ const AttributeItem = ({ attribute, onSelect }) => {
   );
 };
 
-export default AttributeItem;
+export default CartAttributeItem;

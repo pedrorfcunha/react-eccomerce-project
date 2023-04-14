@@ -8,15 +8,18 @@ import CartItem from "../cart-item/cart-item.component";
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cartCount } = useContext(CartContext);
 
   return (
     <div className="cart-dropdown-container">
       <div className="bag-container">
-        <h3 className="my-bag">My bag, X items</h3>
+        <h3 className="my-bag">My bag, {cartCount} {cartCount === 1 ? "item" : "items"}</h3>
         <div className="cart-items">
           {cartItems.map((item) => (
-            <CartItem key={item.id} cartItem={item} />
+            <CartItem
+              key={JSON.stringify(item.selectedAttributes)}
+              cartItem={item}
+            />
           ))}
         </div>
         <div className="total-price-container">

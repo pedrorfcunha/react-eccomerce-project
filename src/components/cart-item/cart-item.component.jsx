@@ -1,10 +1,31 @@
-import AttributeItem from "../attribute-item/attribute-item.component";
+import { useState, useEffect, useContext } from "react";
+
+import { CartContext } from "../../contexts/cart.context";
+
+import CartAttributeItem from "../cart-attribute-item/cart-attribute-item.component";
 
 import "./cart-item.styles.scss";
 
 const CartItem = ({ cartItem }) => {
-  const { attributes, name, price, gallery, quantity } = cartItem;
-  console.log(cartItem);
+  const { attributes, name, prices, gallery, quantity, selectedAttributes } =
+    cartItem;
+
+  const { addItemToCart, removeItemToCart } = useContext(CartContext);
+
+  // Aqui foi só um rascunho, mas vou ajustar toda a parte de moeda/preco na proxima feature que vai ser focada nisso.
+  // É uma pequena gambiarra só pra completar o cartitem como um todo
+  const checkCurrency = (prices) => {
+    return prices.filter((price) => price.currency.label === "USD");
+  };
+
+  const [convertedPrice, setConvertedPrice] = useState("150");
+  const [currencySymbol, setCurrencySymbol] = useState("$");
+
+  useEffect(() => {
+    const filteredPrice = checkCurrency(prices);
+    setConvertedPrice(filteredPrice[0].amount);
+    setCurrencySymbol(filteredPrice[0].currency.symbol);
+  }, [quantity]);
 
   return (
     <div className="cart-item-container">
@@ -12,32 +33,41 @@ const CartItem = ({ cartItem }) => {
         <div className="item-details">
           <div className="title-box">
             <h3 className="name">{name}</h3>
-            <span className="price">$50.00</span>
+            <span className="price">
+              {currencySymbol}
+              {convertedPrice}
+            </span>
           </div>
           <div className="attributes-box">
             {attributes?.map((attribute) => (
-              <AttributeItem
+              <CartAttributeItem
                 key={attribute.id}
                 attribute={attribute}
                 display={"cart"}
+                selectedAttributes={selectedAttributes}
               />
             ))}
           </div>
         </div>
         <div className="quantity-display">
-          <button className="quantity-btn">+</button>
+          <button
+            className="quantity-btn"
+            onClick={() => addItemToCart(cartItem)}
+          >
+            +
+          </button>
           <span className="quantity">{quantity}</span>
-          <button className="quantity-btn">-</button>
+          <button
+            className="quantity-btn"
+            onClick={() => removeItemToCart(cartItem)}
+          >
+            -
+          </button>
         </div>
       </div>
-      <img className="cart-image" src={gallery[0]}></img>
+      <img className="cart-image" src={gallery[0]} alt={name}></img>
     </div>
   );
 };
 
 export default CartItem;
-
-// Cart Item
-// {
-//   id, brand, name, atributtes, price, gallery, quantity
-// }
