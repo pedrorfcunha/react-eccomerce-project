@@ -2,13 +2,14 @@ import { useState } from "react";
 
 import "./attribute-item.styles.scss";
 
-const AttributeItem = ({ attribute }) => {
-  const { items, name } = attribute;
+const AttributeItem = ({ attribute, onSelect }) => {
+  const { items, name, id } = attribute;
 
   const [selectedBox, setSelectedBox] = useState();
 
-  const toggleSelectedBox = (item) => {
-    setSelectedBox(item);
+  const toggleSelectedBox = (selectedValue) => {
+    setSelectedBox(selectedValue);
+    onSelect(id, selectedValue);
   };
 
   return (

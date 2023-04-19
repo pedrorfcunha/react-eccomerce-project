@@ -1,12 +1,31 @@
 import ReactHtmlParser from "react-html-parser";
+import { useState, useContext } from "react";
 
-import AttributeItem from "../attribute-item/attribute-item";
+import { CartContext } from "../../contexts/cart.context";
+
+import AttributeItem from "../attribute-item/attribute-item.component";
 import Button from "../../components/button/button.component";
 
 import "./attributes-container.styles.scss";
 
 const AttributesContainer = ({ product }) => {
   const { attributes, brand, description, name, prices } = product;
+  const { addItemToCart } = useContext(CartContext);
+
+  const [selectedAttributes, setSelectedAttributes] = useState();
+
+  const handleAttributeSelection = (attributeId, selectedValue) => {
+    const attributeSelection = (selectedAttributes) => ({
+      ...selectedAttributes,
+      [attributeId]: selectedValue,
+    });
+    setSelectedAttributes(attributeSelection);
+  };
+
+  const addProductToCart = () => {
+    const selectedProduct = { ...product, selectedAttributes };
+    addItemToCart(selectedProduct);
+  };
 
   return (
     <div className="attributes-container">
@@ -14,14 +33,18 @@ const AttributesContainer = ({ product }) => {
       <h3 className="product-name">{name}</h3>
       <div className="attribute-items">
         {attributes?.map((attribute) => (
-          <AttributeItem key={attribute.id} attribute={attribute} />
+          <AttributeItem
+            key={attribute.id}
+            attribute={attribute}
+            onSelect={handleAttributeSelection}
+          />
         ))}
       </div>
       <div>
         <p className="price-title">PRICE:</p>
         <p className="price-value">$50.00</p>
       </div>
-      <Button>ADD TO CART</Button>
+      <Button onClick={addProductToCart}>ADD TO CART</Button>
       <div className="product-description">{ReactHtmlParser(description)}</div>
     </div>
   );
