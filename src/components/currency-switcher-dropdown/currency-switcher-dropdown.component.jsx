@@ -13,10 +13,9 @@ const CurrencySwitcherDropdown = () => {
   const response = useQuery(GET_CURRENCIES);
   const { loading, error, data } = response;
 
-  const { chosenCurrency, setChosenCurrency } = useContext(
+  const { currencyLabel, setChosenCurrency } = useContext(
     CurrencySwitcherContext
   );
-  console.log(chosenCurrency);
 
   useEffect(() => {
     if (data) {
@@ -30,10 +29,10 @@ const CurrencySwitcherDropdown = () => {
       {currenciesAvailable.map((currency) => (
         <div
           key={currency.label}
-          onClick={() => setChosenCurrency(currency.label)}
+          onClick={() => setChosenCurrency(currency)}
           className="currency-label-box"
           style={
-            currency.label === chosenCurrency
+            currency.label === currencyLabel
               ? { backgroundColor: "#EEEEEE" }
               : {}
           }

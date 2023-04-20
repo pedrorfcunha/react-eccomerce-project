@@ -11,23 +11,17 @@ const CartItem = ({ cartItem }) => {
   const { attributes, name, prices, gallery, quantity, selectedAttributes } =
     cartItem;
 
-  const { chosenCurrency } = useContext(CurrencySwitcherContext);
   const { addItemToCart, removeItemToCart } = useContext(CartContext);
+  const { currencySymbol, checkCurrency } = useContext(CurrencySwitcherContext);
 
-  // Aqui foi só um rascunho, mas vou ajustar toda a parte de moeda/preco na proxima feature que vai ser focada nisso.
-  // É uma pequena gambiarra só pra completar o cartitem como um todo
-  const checkCurrency = (prices) => {
-    return prices.filter((price) => price.currency.label === chosenCurrency);
-  };
-
-  const [convertedPrice, setConvertedPrice] = useState(150);
-  const [currencySymbol, setCurrencySymbol] = useState("$");
+  const [convertedPrice, setConvertedPrice] = useState();
 
   useEffect(() => {
-    const filteredPrice = checkCurrency(prices);
-    setConvertedPrice(filteredPrice[0].amount);
-    setCurrencySymbol(filteredPrice[0].currency.symbol);
-  }, [quantity]);
+    if (prices) {
+      const filteredPrice = checkCurrency(prices);
+      setConvertedPrice(filteredPrice[0].amount);
+    }
+  }, [currencySymbol, prices]);
 
   return (
     <div className="cart-item-container">
@@ -36,8 +30,7 @@ const CartItem = ({ cartItem }) => {
           <div className="title-box">
             <h3 className="name">{name}</h3>
             <span className="price">
-              {currencySymbol}
-              {convertedPrice}
+              {currencySymbol} {convertedPrice}
             </span>
           </div>
           <div className="attributes-box">
