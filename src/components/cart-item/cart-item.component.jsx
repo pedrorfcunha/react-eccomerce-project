@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 
+import { CurrencySwitcherContext } from "../../contexts/currency-switcher.context";
 import { CartContext } from "../../contexts/cart.context";
 
 import CartAttributeItem from "../cart-attribute-item/cart-attribute-item.component";
@@ -10,15 +11,16 @@ const CartItem = ({ cartItem }) => {
   const { attributes, name, prices, gallery, quantity, selectedAttributes } =
     cartItem;
 
+  const { chosenCurrency } = useContext(CurrencySwitcherContext);
   const { addItemToCart, removeItemToCart } = useContext(CartContext);
 
   // Aqui foi só um rascunho, mas vou ajustar toda a parte de moeda/preco na proxima feature que vai ser focada nisso.
   // É uma pequena gambiarra só pra completar o cartitem como um todo
   const checkCurrency = (prices) => {
-    return prices.filter((price) => price.currency.label === "USD");
+    return prices.filter((price) => price.currency.label === chosenCurrency);
   };
 
-  const [convertedPrice, setConvertedPrice] = useState("150");
+  const [convertedPrice, setConvertedPrice] = useState(150);
   const [currencySymbol, setCurrencySymbol] = useState("$");
 
   useEffect(() => {
