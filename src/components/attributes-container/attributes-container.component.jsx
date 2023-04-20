@@ -1,7 +1,8 @@
 import ReactHtmlParser from "react-html-parser";
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import { CartContext } from "../../contexts/cart.context";
+import { CurrencySwitcherContext } from "../../contexts/currency-switcher.context";
 
 import AttributeItem from "../attribute-item/attribute-item.component";
 import Button from "../../components/button/button.component";
@@ -27,6 +28,17 @@ const AttributesContainer = ({ product }) => {
     addItemToCart(selectedProduct);
   };
 
+  const { currencySymbol, checkCurrency } = useContext(CurrencySwitcherContext);
+
+  const [convertedPrice, setConvertedPrice] = useState();
+
+  useEffect(() => {
+    if (prices) {
+      const filteredPrice = checkCurrency(prices);
+      setConvertedPrice(filteredPrice[0].amount);
+    }
+  }, [currencySymbol, prices]);
+
   return (
     <div className="attributes-container">
       <h2 className="product-brand">{brand}</h2>
@@ -42,7 +54,9 @@ const AttributesContainer = ({ product }) => {
       </div>
       <div>
         <p className="price-title">PRICE:</p>
-        <p className="price-value">$50.00</p>
+        <p className="price-value">
+          {currencySymbol} {convertedPrice}
+        </p>
       </div>
       <Button onClick={addProductToCart}>ADD TO CART</Button>
       <div className="product-description">{ReactHtmlParser(description)}</div>

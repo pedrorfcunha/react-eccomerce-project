@@ -20,13 +20,13 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <BrowserRouter>
-        <UserProvider>
-          <CartProvider>
-            <CurrencySwitcherProvider>
+        <CurrencySwitcherProvider>
+          <UserProvider>
+            <CartProvider>
               <App />
-            </CurrencySwitcherProvider>
-          </CartProvider>
-        </UserProvider>
+            </CartProvider>
+          </UserProvider>
+        </CurrencySwitcherProvider>
       </BrowserRouter>
     </ApolloProvider>
   </React.StrictMode>
