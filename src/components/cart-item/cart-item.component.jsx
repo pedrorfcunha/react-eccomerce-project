@@ -19,7 +19,11 @@ const CartItem = ({ cartItem }) => {
   useEffect(() => {
     if (prices) {
       const filteredPrice = checkCurrency(prices);
-      setConvertedPrice(filteredPrice[0].amount);
+      const formattedNumber = filteredPrice[0].amount.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      });
+      setConvertedPrice(formattedNumber);
     }
   }, [currencySymbol, prices]);
 
