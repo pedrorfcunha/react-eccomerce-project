@@ -1,4 +1,6 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+
+import { CurrencySwitcherContext } from "./currency-switcher.context";
 
 const checkToAddCartItem = (cartItems, productToAdd) => {
   //find if cartItems contains productToAdd
@@ -55,12 +57,16 @@ export const CartContext = createContext({
   addItemToCart: () => {},
   removeItemFromCart: () => {},
   cartCount: 0,
+  cartTotalPrice: 0,
 });
 
 export const CartProvider = ({ children }) => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const [cartTotalPrice, setCartTotalPrice] = useState(0);
+
+  const { currencySymbol, checkCurrency } = useContext(CurrencySwitcherContext);
 
   useEffect(() => {
     const newCartCount = cartItems.reduce(
@@ -69,6 +75,21 @@ export const CartProvider = ({ children }) => {
     );
     setCartCount(newCartCount);
   }, [cartItems]);
+
+  useEffect(() => {
+    const newCartTotalPrice = cartItems.reduce((total, cartItem) => {
+      const { prices } = cartItem;
+      const filteredPrice = checkCurrency(prices);
+      const itemPrice = filteredPrice[0].amount;
+      const productPrice = cartItem.quantity * itemPrice;
+      return total + productPrice;
+    }, 0);
+    const formattedNumber = newCartTotalPrice.toLocaleString("en-US", {      
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    setCartTotalPrice(formattedNumber);
+  }, [cartItems, currencySymbol]);
 
   const addItemToCart = (productToAdd) => {
     setCartItems(checkToAddCartItem(cartItems, productToAdd));
@@ -85,6 +106,7 @@ export const CartProvider = ({ children }) => {
     removeItemToCart,
     cartItems,
     cartCount,
+    cartTotalPrice,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
