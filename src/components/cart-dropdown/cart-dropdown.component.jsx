@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { CartContext } from "../../contexts/cart.context";
 import { CurrencySwitcherContext } from "../../contexts/currency-switcher.context";
@@ -9,9 +10,16 @@ import CartItem from "../cart-item/cart-item.component";
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = () => {
-  const { cartItems, cartCount, cartTotalPrice } = useContext(CartContext);
+  const { cartItems, cartCount, cartTotalPrice, isCartOpen, setIsCartOpen } =
+    useContext(CartContext);
 
   const { currencySymbol } = useContext(CurrencySwitcherContext);
+
+  const navigate = useNavigate();
+  const goToCheckoutPage = () => {
+    navigate("/checkout");
+    setIsCartOpen(!isCartOpen);
+  };
 
   return (
     <div className="cart-dropdown-container">
@@ -35,8 +43,10 @@ const CartDropdown = () => {
         </div>
       </div>
       <div className="buttons-container">
-        <Button buttonType="inverted">VIEW BAG</Button>
-        <Button>CHECK OUT</Button>
+        <Button buttonType="inverted" onClick={goToCheckoutPage}>
+          VIEW BAG
+        </Button>
+        <Button onClick={goToCheckoutPage}>CHECK OUT</Button>
       </div>
     </div>
   );
