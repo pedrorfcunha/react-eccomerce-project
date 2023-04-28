@@ -41,7 +41,7 @@
           color: #1d1f22;
         }
 
-        .price {          
+        .price {
           height: 26px;
           margin-top: 4px;
           font-family: "Raleway";
@@ -61,10 +61,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-
-        .attribute {
-          height: 46px;
-        }
       }
     }
 
@@ -88,6 +84,11 @@
           cursor: pointer;
         }
       }
+
+      .quantity {
+        font-weight: 500;
+        font-size: 16px;
+      }
     }
 
     .item-details::-webkit-scrollbar {
@@ -107,6 +108,141 @@
   .cart-image {
     width: 121px;
     height: 190px;
+    object-fit: scale-down;
+  }
+}
+
+.checkout-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 24px;
+  padding: 0px;
+  gap: 24px;
+  max-width: 1240px;
+  height: 312px;
+
+  .item-details-container {
+    width: 1016px;
+    height: 288px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 671px;
+
+    .item-details {
+      width: 292px;
+      height: 288px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      overflow: overlay;
+
+      .title-box {
+        width: 292px;
+        max-height: 114px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 16px;
+
+        .brand {
+          margin: 0px;
+          font-family: "Raleway";
+          font-weight: 600;
+          font-size: 30px;
+          line-height: 27px;
+          color: #1d1f22;
+        }
+
+        .name {
+          width: 292px;
+          height: 27px;
+          margin: 0px;
+          font-family: "Raleway";
+          font-weight: 400;
+          font-size: 30px;
+          line-height: 27px;
+          display: flex;
+          align-items: center;
+          color: #1d1f22;
+        }
+
+        .price {
+          height: 26px;
+          margin: 4px 0;
+          font-family: "Raleway";
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 24px;
+          text-align: right;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          color: #1d1f22;
+        }
+      }
+
+      .attributes-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
+    .quantity-display {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px;
+      gap: 32px;
+      width: 45px;
+      height: 288px;
+
+      .quantity-btn {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #1d1f22;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Raleway";
+        font-size: 40px;
+        font-weight: 200;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .quantity {
+        font-weight: 500;
+        font-size: 24px;
+      }
+    }
+
+    .item-details::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .item-details::-webkit-scrollbar-track {
+      background-color: rgba(57, 55, 72, 0.1);
+    }
+
+    .item-details::-webkit-scrollbar-thumb {
+      background-color: rgba(57, 55, 72, 0.3);
+      border-radius: 20px;
+    }
+  }
+
+  .cart-image {
+    width: 200px;
+    height: 288px;
     object-fit: scale-down;
   }
 }

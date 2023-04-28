@@ -84,7 +84,7 @@ export const CartProvider = ({ children }) => {
       const productPrice = cartItem.quantity * itemPrice;
       return total + productPrice;
     }, 0);
-    const formattedNumber = newCartTotalPrice.toLocaleString("en-US", {      
+    const formattedNumber = newCartTotalPrice.toLocaleString("en-US", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
