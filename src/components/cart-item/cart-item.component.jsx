@@ -7,9 +7,16 @@ import CartAttributeItem from "../cart-attribute-item/cart-attribute-item.compon
 
 import "./cart-item.styles.scss";
 
-const CartItem = ({ cartItem }) => {
-  const { attributes, name, prices, gallery, quantity, selectedAttributes } =
-    cartItem;
+const CartItem = ({ cartItem, display }) => {
+  const {
+    attributes,
+    name,
+    brand,
+    prices,
+    gallery,
+    quantity,
+    selectedAttributes,
+  } = cartItem;
 
   const { addItemToCart, removeItemToCart } = useContext(CartContext);
   const { currencySymbol, checkCurrency } = useContext(CurrencySwitcherContext);
@@ -27,11 +34,20 @@ const CartItem = ({ cartItem }) => {
     }
   }, [currencySymbol, prices]);
 
+  const selectAttributeComponentStyle = (display) => {
+    if (display === "checkout") {
+      return "checkout-item-container";
+    } else if (display === "cart") {
+      return "cart-item-container";
+    }
+  };
+
   return (
-    <div className="cart-item-container">
+    <div className={selectAttributeComponentStyle(display)}>
       <div className="item-details-container">
         <div className="item-details">
           <div className="title-box">
+            {display === "checkout" && <h3 className="brand">{brand}</h3>}
             <h3 className="name">{name}</h3>
             <span className="price">
               {currencySymbol} {convertedPrice}
@@ -42,7 +58,7 @@ const CartItem = ({ cartItem }) => {
               <CartAttributeItem
                 key={attribute.id}
                 attribute={attribute}
-                display={"cart"}
+                display={display}
                 selectedAttributes={selectedAttributes}
               />
             ))}

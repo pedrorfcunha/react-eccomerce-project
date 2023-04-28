@@ -32,6 +32,7 @@ const CartDropdown = () => {
             <CartItem
               key={JSON.stringify(item.selectedAttributes)}
               cartItem={item}
+              display={"cart"}
             />
           ))}
         </div>

@@ -6,6 +6,7 @@ import { CurrencySwitcherContext } from "../../contexts/currency-switcher.contex
 import CartModal from "../../components/modal/cart-modal.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import Button from "../../components/button/button.component";
+import CartContainer from "../../components/cart-container/cart-container.component";
 
 import "./checkout.styles.scss";
 
@@ -27,7 +28,7 @@ const Checkout = () => {
       )}
       <div className="cart-page">
         <h1 className="cart-title">CART</h1>
-        <div className="cart-container"></div>
+        <CartContainer />
         <div className="cart-summary">
           <ol className="ol-title">
             <li className="li-title">Tax 21%:</li>
