@@ -14,6 +14,11 @@ const Checkout = () => {
   const { isCartOpen, cartCount, cartTotalPrice } = useContext(CartContext);
   const { currencySymbol } = useContext(CurrencySwitcherContext);
 
+  const formattedCartTotalPrice = cartTotalPrice.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
   const cartTotalTax = (cartTotalPrice * 0.21).toLocaleString("en-US", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -43,7 +48,7 @@ const Checkout = () => {
             <li className="li-data">{cartCount}</li>
             <li className="li-data">
               {currencySymbol}
-              {cartTotalPrice}
+              {formattedCartTotalPrice}
             </li>
           </ol>
         </div>
