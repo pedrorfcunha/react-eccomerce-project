@@ -21,6 +21,11 @@ const CartDropdown = () => {
     setIsCartOpen(!isCartOpen);
   };
 
+  const formattedCartTotalPrice = cartTotalPrice.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
   return (
     <div className="cart-dropdown-container">
       <div className="bag-container">
@@ -39,7 +44,7 @@ const CartDropdown = () => {
         <div className="total-price-container">
           <span className="total">Total</span>
           <span className="total-price">
-            {currencySymbol} {cartTotalPrice}
+            {currencySymbol} {formattedCartTotalPrice}
           </span>
         </div>
       </div>
