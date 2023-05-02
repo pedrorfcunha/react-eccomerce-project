@@ -84,15 +84,20 @@ export const CartProvider = ({ children }) => {
       const productPrice = cartItem.quantity * itemPrice;
       return total + productPrice;
     }, 0);
-    // const formattedNumber = newCartTotalPrice.toLocaleString("en-US", {
-    //   minimumFractionDigits: 2,
-    //   maximumFractionDigits: 2,
-    // });
     setCartTotalPrice(newCartTotalPrice);
   }, [cartItems, currencySymbol]);
 
   const addItemToCart = (productToAdd) => {
-    setCartItems(checkToAddCartItem(cartItems, productToAdd));
+    if (
+      productToAdd.attributes.length ===
+      (productToAdd.selectedAttributes &&
+        Object.keys(productToAdd.selectedAttributes).length)
+    ) {
+      setCartItems(checkToAddCartItem(cartItems, productToAdd));
+    } else {
+      alert("Please, select all of your attributes before adding to cart :)");
+      return;
+    }
   };
 
   const removeItemToCart = (cartItemToRemove) => {
