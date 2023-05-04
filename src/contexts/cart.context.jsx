@@ -58,6 +58,8 @@ export const CartContext = createContext({
   removeItemFromCart: () => {},
   cartCount: 0,
   cartTotalPrice: 0,
+  isAlertOpen: false,
+  setIsAlertOpen: () => {},
 });
 
 export const CartProvider = ({ children }) => {
@@ -65,6 +67,7 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [cartTotalPrice, setCartTotalPrice] = useState(0);
+  const [isAlertOpen, setIsAlertOpen] = useState(false);
 
   const { currencySymbol, checkCurrency } = useContext(CurrencySwitcherContext);
 
@@ -95,7 +98,7 @@ export const CartProvider = ({ children }) => {
     ) {
       setCartItems(checkToAddCartItem(cartItems, productToAdd));
     } else {
-      alert("Please, select all of your attributes before adding to cart :)");
+      setIsAlertOpen(!isAlertOpen);
       return;
     }
   };
@@ -112,6 +115,8 @@ export const CartProvider = ({ children }) => {
     cartItems,
     cartCount,
     cartTotalPrice,
+    isAlertOpen,
+    setIsAlertOpen,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

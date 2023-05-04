@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { CartContext } from "../../contexts/cart.context";
 
-import CartModal from "../../components/modal/cart-modal.component";
+import CartModal from "../../components/cart-modal/cart-modal.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
 import ProductsContainer from "../../components/products-container/products-container.component";
