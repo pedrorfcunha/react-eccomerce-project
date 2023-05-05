@@ -2,11 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { Elements } from "@stripe/react-stripe-js";
 
 import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { CartProvider } from "./contexts/cart.context";
 import { CurrencySwitcherProvider } from "./contexts/currency-switcher.context";
+import { stripePromise } from "./utils/stripe/stripe.utils";
 
 import "./index.scss";
 
@@ -23,7 +25,9 @@ root.render(
         <CurrencySwitcherProvider>
           <UserProvider>
             <CartProvider>
-              <App />
+              <Elements stripe={stripePromise}>
+                <App />
+              </Elements>
             </CartProvider>
           </UserProvider>
         </CurrencySwitcherProvider>

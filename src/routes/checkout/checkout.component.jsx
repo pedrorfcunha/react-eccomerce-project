@@ -7,6 +7,7 @@ import CartModal from "../../components/cart-modal/cart-modal.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import Button from "../../components/button/button.component";
 import CartContainer from "../../components/cart-container/cart-container.component";
+import PaymentForm from "../../components/payment-form/payment-form.component";
 
 import "./checkout.styles.scss";
 
@@ -55,6 +56,7 @@ const Checkout = () => {
         <div className="btn-container">
           <Button>ORDER</Button>
         </div>
+        <PaymentForm></PaymentForm>
       </div>
     </div>
   );
