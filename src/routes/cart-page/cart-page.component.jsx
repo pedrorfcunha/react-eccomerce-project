@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { CartContext } from "../../contexts/cart.context";
 
@@ -13,6 +14,12 @@ import "./cart-page.styles.scss";
 const CartPage = () => {
   const { isCartOpen } = useContext(CartContext);
 
+  const navigate = useNavigate();
+
+  const goToCheckoutPage = () => {
+    navigate("/checkout");
+  };
+
   return (
     <div>
       {isCartOpen && (
@@ -25,7 +32,7 @@ const CartPage = () => {
         <CartContainer />
         <CartSummary />
         <div className="btn-container">
-          <Button>ORDER</Button>
+          <Button onClick={goToCheckoutPage}>ORDER</Button>
         </div>
       </div>
     </div>

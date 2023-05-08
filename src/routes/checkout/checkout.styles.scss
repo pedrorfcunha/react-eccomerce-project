@@ -1,0 +1,41 @@
+.checkout-container {
+  width: 900px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .cart-summary-container {
+    width: 300px;
+    height: 190px;
+    padding-left: 15px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+
+    h2 {
+      font-family: inherit;
+      font-weight: 500;
+    }
+
+    .cart-summary-box {
+      margin: 15px;
+      border-radius: 10px;
+    }
+
+    .back-symbol {
+      height: 20px;
+      position: relative;
+      bottom: 20px;
+      left: 250px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .payments-container {
+    width: 500px;
+  }
+}
