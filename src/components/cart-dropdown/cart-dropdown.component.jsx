@@ -16,6 +16,11 @@ const CartDropdown = () => {
   const { currencySymbol } = useContext(CurrencySwitcherContext);
 
   const navigate = useNavigate();
+  const goToCartPage = () => {
+    navigate("/cart");
+    setIsCartOpen(!isCartOpen);
+  };
+
   const goToCheckoutPage = () => {
     navigate("/checkout");
     setIsCartOpen(!isCartOpen);
@@ -49,7 +54,7 @@ const CartDropdown = () => {
         </div>
       </div>
       <div className="buttons-container">
-        <Button buttonType="inverted" onClick={goToCheckoutPage}>
+        <Button buttonType="inverted" onClick={goToCartPage}>
           VIEW BAG
         </Button>
         <Button onClick={goToCheckoutPage}>CHECK OUT</Button>
