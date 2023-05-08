@@ -8,6 +8,7 @@ import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { CartProvider } from "./contexts/cart.context";
 import { CurrencySwitcherProvider } from "./contexts/currency-switcher.context";
+import { PaymentProvider } from "./contexts/payment.context";
 import { stripePromise } from "./utils/stripe/stripe.utils";
 
 import "./index.scss";
@@ -26,7 +27,9 @@ root.render(
           <UserProvider>
             <CartProvider>
               <Elements stripe={stripePromise}>
-                <App />
+                <PaymentProvider>
+                  <App />
+                </PaymentProvider>
               </Elements>
             </CartProvider>
           </UserProvider>
