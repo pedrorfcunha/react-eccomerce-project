@@ -9,30 +9,7 @@
 
   .cart-title {
     margin: 0;
-  }
-  .cart-summary {
-    display: flex;
-
-    ol {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .li-title {
-      margin: 8px;
-      font-weight: 400;
-
-      &.total {
-        font-weight: 500;
-      }
-    }
-
-    .li-data {
-      margin: 8px;
-      font-weight: 700;
-    }
-  }
+  }  
 
   .btn-container {
     margin-top: 20px;
