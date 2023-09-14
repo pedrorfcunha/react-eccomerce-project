@@ -1,21 +1,17 @@
-import { useState, useEffect, useContext } from "react";
-import { useQuery } from "@apollo/client";
+import { useState, useEffect, useContext } from 'react';
 
-import { CurrencySwitcherContext } from "../../contexts/currency-switcher.context";
+import { CurrencySwitcherContext } from '../../contexts/currency-switcher.context';
 
-import { GET_CURRENCIES } from "../../data/shop-data";
+import GET_CURRENCIES from '../../data/get-currencies.json';
 
-import "./currency-switcher-dropdown.styles.scss";
+import './currency-switcher-dropdown.styles.scss';
 
 const CurrencySwitcherDropdown = () => {
   const [currenciesAvailable, setCurrenciesAvailable] = useState([]);
 
-  const response = useQuery(GET_CURRENCIES);
-  const { loading, error, data } = response;
+  const { data } = GET_CURRENCIES;
 
-  const { currencyLabel, setChosenCurrency } = useContext(
-    CurrencySwitcherContext
-  );
+  const { currencyLabel, setChosenCurrency } = useContext(CurrencySwitcherContext);
 
   useEffect(() => {
     if (data) {
@@ -26,18 +22,16 @@ const CurrencySwitcherDropdown = () => {
 
   return (
     <div className="currency-switcher-dropdown-container">
-      {currenciesAvailable.map((currency) => (
+      {currenciesAvailable.map(currency => (
         <div
           key={currency.label}
           onClick={() => setChosenCurrency(currency)}
           className="currency-label-box"
-          style={
-            currency.label === currencyLabel
-              ? { backgroundColor: "#EEEEEE" }
-              : {}
-          }
+          style={currency.label === currencyLabel ? { backgroundColor: '#EEEEEE' } : {}}
         >
-          <p className="currency-label">{currency.symbol} {currency.label}</p>
+          <p className="currency-label">
+            {currency.symbol} {currency.label}
+          </p>
         </div>
       ))}
     </div>
