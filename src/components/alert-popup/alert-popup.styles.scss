@@ -1,0 +1,58 @@
+.alert-popup {
+  width: 400px;
+  height: 220px;
+  border-width: 10px;
+  border-radius: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+
+  .alert-popup-container {
+    width: 340px;
+    height: 180px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    .alert-message-container {
+      width: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+
+      .alert-message {
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 500;
+        color: #1d1f22;
+        text-align: center;
+      }
+
+      .alert-btn-container {
+        width: 160px;
+      }
+    }
+
+    .alert-logo-container {
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d31b03;
+
+      .exclamation-logo {
+        width: 40px;
+        transition: width 1s ease-in-out;
+      }
+
+      .exclamation-logo:hover {
+        width: 60px;
+      }
+    }
+  }
+}

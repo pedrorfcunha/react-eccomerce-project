@@ -1,0 +1,36 @@
+.nav-link-box {
+  height: 56px;
+  margin-top: 24px;
+}
+
+.nav-link-name {
+  display: flex;
+  padding: 4px 16px 32px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  align-items: center;
+  text-align: center;
+  line-break: strict;
+  text-transform: uppercase;
+  color: #1d1f22;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav-link-box-active {
+  height: 56px;
+  margin-top: 24px;
+  border-bottom: 2px solid #bb9cec;
+  color: #bb9cec;
+  font-weight: 600;
+
+  .nav-link-name {
+    color: #bb9cec;
+    font-weight: 600;
+  }
+}

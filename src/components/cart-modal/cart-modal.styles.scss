@@ -1,0 +1,26 @@
+.cart-backdrop {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(57, 55, 72, 0.22);
+    z-index: 1;
+  }
+  
+  .modal {
+    border: none;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .nav-cart-backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    z-index: 1;
+  }

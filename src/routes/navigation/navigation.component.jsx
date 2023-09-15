@@ -1,86 +1,71 @@
-import { useState, useEffect, useContext } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useContext } from 'react';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
-import { UserContext } from "../../contexts/user.context";
+import { CurrencySwitcherContext } from '../../contexts/currency-switcher.context';
 
-import { signOutUser } from "../../utils/firebase/firebase.utils";
+import GET_PRODUCTS from '../../data/get-products.json';
 
-import { ReactComponent as ShopLogo } from "./../../assets/shoplogo.svg";
-import { ReactComponent as ArrowLogo } from "./../../assets/arrowlogo.svg";
-import { ReactComponent as CartLogo } from "./../../assets/cartlogo.svg";
-import { ReactComponent as CurrencyLogo } from "./../../assets/currencylogo.svg";
+import NavLinkButton from '../../components/nav-link-button/nav-link-button.component';
+import NavSignInButton from '../../components/nav-sign-in-button/nav-sign-in-button.component';
+import CurrencySwitcherLogo from '../../components/currency-switcher-logo/currency-switcher-logo.component';
+import NavCartLogo from '../../components/nav-cart-logo/nav-cart-logo.component';
+import CurrencySwitcherDropdown from '../../components/currency-switcher-dropdown/currency-switcher-dropdown.component';
+import CurrencyModal from '../../components/currency-modal/currency-modal.component';
 
-import "./navigation.styles.scss";
+import { ReactComponent as CookLogo } from './../../assets/cooklogo.svg';
+
+import './navigation.styles.scss';
 
 const Navigation = () => {
-  const [currentPath, setCurrentPath] = useState("");
-  const { pathname } = useLocation();
+  const [categories, setCategories] = useState([]);
+
+  const { data } = GET_PRODUCTS;
 
   useEffect(() => {
-    setCurrentPath(pathname);
-  }, [pathname]);
-
-  const getLinkClass = (path) => {
-    if (path === currentPath) {
-      return "nav-link active";
-    } else {
-      return "nav-link";
+    if (data) {
+      const { categories } = data;
+      setCategories(categories);
     }
-  };
+  }, [data]);
 
-  const getSpamClass = (path) => {
-    if (path === currentPath) {
-      return "underline";
-    } else {
-      return "";
+  const { pathname } = useLocation();
+  const currentPage = pathname.slice(1);
+
+  const [selectedPage, setSelectedPage] = useState(currentPage);
+
+  useEffect(() => {
+    if (data && selectedPage === '') {
+      const { categories } = data;
+      setSelectedPage(categories[0].name);
+    } else if (selectedPage !== '') {
+      setSelectedPage(currentPage);
     }
-  };
+  }, [data, currentPage]);
 
-  const { currentUser } = useContext(UserContext);
-  
- return (
+  const { isCurrencySwitcherOpen } = useContext(CurrencySwitcherContext);
+
+  return (
     <>
       <header className="navigation">
         <div className="nav-links-container">
-          <Link className={getLinkClass("/")} to="/">
-            <span></span>ALL<span className={getSpamClass("/")}></span>
-          </Link>
-          <Link className={getLinkClass("/tech")} to="/tech">
-            <span></span>TECH<span className={getSpamClass("/tech")}></span>
-          </Link>
-          <Link className={getLinkClass("/clothes")} to="/clothes">
-            <span></span>CLOTHES
-            <span className={getSpamClass("/clothes")}></span>
+          {categories.map(category => (
+            <NavLinkButton category={category} selectedPage={selectedPage} key={category.name} />
+          ))}
+        </div>
+        <div onClick={() => setSelectedPage('')}>
+          <Link className="logo-container" to="/">
+            <CookLogo className="cook-logo" />
           </Link>
         </div>
-        <Link className="logo-container" to="/">
-          <ShopLogo />
-        </Link>
         <div className="actions-container">
-          <div className="action-container">
-            {currentUser ? (
-              <span onClick={signOutUser} className={getLinkClass("/auth")}><span></span>SIGN OUT
-              <span className={getSpamClass("/auth")}></span></span>
-            ) : (
-              <Link className={getLinkClass("/auth")} to="auth">
-                <span></span>SIGN IN
-                <span className={getSpamClass("/auth")}></span>
-              </Link>
-            )}
-          </div>
-          <div className="action-container">
-            <Link className="actions-currency-logo" to="/">
-              <CurrencyLogo />
-            </Link>
-            <Link className="actions-arrow-logo" to="/">
-              <ArrowLogo />
-            </Link>
-          </div>
-          <div className="action-container">
-            <Link className="actions-cart-logo" to="/">
-              <CartLogo />
-            </Link>
-          </div>
+          <NavSignInButton selectedPage={selectedPage} />
+          <CurrencySwitcherLogo />
+          {isCurrencySwitcherOpen && (
+            <CurrencyModal>
+              <CurrencySwitcherDropdown />
+            </CurrencyModal>
+          )}
+          <NavCartLogo />
         </div>
       </header>
       <Outlet />

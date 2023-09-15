@@ -6,7 +6,22 @@
   font-size: 42px;
   display: flex;
   align-items: center;
-  color: #1d1f22;
+  color: #6b42ad;
+  position: relative;
+  left: max(calc(50% - 299px / 2 - 469.5px), 16px);
+  top: max(calc(50% - 68px / 2 - 562.5px), 16px);  
+  text-transform: capitalize;  
+}
+
+.website-name {
+  height: 68px;
+  width: 320px;
+  margin: 80px 0 103px;
+  font-weight: 500;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  color: #6b42ad;
   position: relative;
   left: max(calc(50% - 299px / 2 - 469.5px), 16px);
   top: max(calc(50% - 68px / 2 - 562.5px), 16px);

@@ -1,0 +1,40 @@
+.action-container {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.action-logo {
+  height: 56px;
+  margin-top: 28.5px;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .cart-symbol {
+    margin: 6px 0px 32px;
+    z-index: 1;
+  }
+
+  .item-count {
+    width: 20px;
+    height: 20px;
+    background-color: #1d1f22;
+    color: #ffffff;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    position: relative;
+    right: 7px;
+    bottom: 20px;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,26 @@
+.cart-container {
+  width: 1240px;
+  max-height: 677px;
+  margin: 55px 0 32px;
+  overflow: overlay;
+
+  .line-breaker {
+    margin: 0;
+    width: 1240px;
+    border-width: 0.5px;
+    border-color: #e5e5e5;
+  }
+}
+
+.cart-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-container::-webkit-scrollbar-track {
+  background-color: rgba(57, 55, 72, 0.1);
+}
+
+.cart-container::-webkit-scrollbar-thumb {
+  background-color: rgba(57, 55, 72, 0.3);
+  border-radius: 20px;
+}

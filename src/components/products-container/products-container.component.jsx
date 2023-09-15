@@ -1,45 +1,38 @@
-import { gql, useQuery } from "@apollo/client";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import ProductItem from "../product-item/product-item.component";
+import ProductItem from '../product-item/product-item.component';
+import GET_PRODUCTS from '../../data/get-products';
 
-import "./products-container.styles.scss";
+import './products-container.styles.scss';
 
-const GET_PRODUCTS = gql`
-  query getProducts {
-    categories {
-      name
-      products {
-        id
-        name
-        brand
-        gallery
-      }
-    }
-  }
-`;
-
-const ProductsContainer = ({category}) => {
+const ProductsContainer = () => {
   const [products, setProducts] = useState([]);
 
-  const response = useQuery(GET_PRODUCTS);
-  const { loading, error, data } = response;
+  const { category } = useParams();
+
+  const { data } = GET_PRODUCTS;
 
   useEffect(() => {
-    if (data) {
+    if (data && category) {
       const { categories } = data;
-      const filteredCategory = categories.filter((item) => item.name === category);
-      const {products} = filteredCategory[0];
+      const filteredCategory = categories.filter(item => item.name === category);
+      const { products } = filteredCategory[0];
+
+      setProducts(products);
+    } else if (data) {
+      const { categories } = data;
+      const { products } = categories[0];
 
       setProducts(products);
     }
   }, [data, category]);
-  
+
   return (
     <>
-      <h1 className="category-name">Category Name</h1>
+      {category ? <h1 className="category-name">{category}</h1> : <h1 className="website-name">KitchenKrafters.com</h1>}
       <div className="products-container">
-        {products.map((product) => (
+        {products.map(product => (
           <ProductItem key={product.id} product={product} />
         ))}
       </div>

@@ -1,0 +1,1102 @@
+{
+  "data": {
+    "categories": [
+      {
+        "name": "all",
+        "products": [
+          {
+            "id": "bakeware-set",
+            "name": "Bakeware Set",
+            "inStock": true,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/SgcAAOSwDLFk8Oyq/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/5bwAAOSwdcJk8Oys/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/r~MAAOSwhh1k8Oyt/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/B7oAAOSwGJdk8Oyu/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 42.2
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 30.33
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 54.44
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 4557.36
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 3191.35
+              }
+            ]
+          },
+          {
+            "id": "cookware-set",
+            "name": "Cookware Set",
+            "inStock": true,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/TPoAAOSwjVhj4~xN/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/eIQAAOSw3oBj4~xN/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/7jkAAOSwcl1j4~xN/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/M4gAAOSwVC1j4~xN/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 566.7
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 407.34
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 731.04
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 61198.87
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 42855.21
+              }
+            ]
+          },
+          {
+            "id": "glass-storage-set",
+            "name": "Glass Storage Set",
+            "inStock": true,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/~1YAAOSwUIle-3aj/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/Iu8AAOSwyoJe-3ak/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/NJEAAOSw4~pe-3aj/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/fxwAAOSwdCVe-3aj/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 50.64
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 36.4
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 65.33
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 5468.84
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 3829.61
+              }
+            ]
+          },
+          {
+            "id": "bread-box",
+            "name": "Bread Box",
+            "inStock": false,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/jWAAAOSwDoFk9aci/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/QG8AAOSw3R5k9aci/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/YlcAAOSwpexk9ach/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/EMEAAOSwjKBk9ach/s-l500.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 333.99
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 240.07
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 430.85
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 36068.27
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 25257.22
+              }
+            ]
+          },
+          {
+            "id": "eletric-grinders",
+            "name": "Eletric Grinders",
+            "inStock": true,
+            "brand": "Kitchen Gadgets",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/aHQAAOSwT7Bi178n/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/O6IAAOSwxIZi178s/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/KywAAOSwrkNi178u/s-l1600.jpg  ",
+              "https://i.ebayimg.com/images/g/9AUAAOSw7Pti178x/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 24.11
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 17.33
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 31.11
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 2604.21
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 1823.63
+              }
+            ]
+          },
+          {
+            "id": "electric-meat-grinder",
+            "name": "Electric Meat Grinder",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/KoIAAOSwxLxjXNf3/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/hYoAAOSwJ-tjXNf2/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/LjUAAOSwmmhjXNf2/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/oicAAOSwdjZjXNf2/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/em0AAOSwwXdjXNf3/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 253.2
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 182
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 326.64
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 27344.18
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 19148.07
+              }
+            ]
+          },
+          {
+            "id": "manual-juicer-hand-press",
+            "name": "Manual Juicer Hand Press",
+            "inStock": false,
+            "brand": "Kitchen Gadgets",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/IJgAAOSwp2lg0uY5/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/8CcAAOSwIj9g0uYw/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/9MAAAOSwoPRjkDwo/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/HMoAAOSw3NBfRh~h/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 78.37
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 56.33
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 101.1
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 8463.67
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 5926.78
+              }
+            ]
+          },
+          {
+            "id": "electric-dumpling-machine",
+            "name": "Electric Dumpling Machine",
+            "inStock": true,
+            "brand": "Kitchen Gadgets",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/DhMAAOSwOZ5kzNUa/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/uKwAAOSw-~FkzNUe/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/UloAAOSw69pkzNUh/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/4mYAAOSwoJ5kzNUk/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 120.57
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 86.67
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 155.54
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 13021.04
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 9118.13
+              }
+            ]
+          },
+          {
+            "id": "melting-dome",
+            "name": "Melting Dome",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/7~gAAOSwH9Zk4y0X/s-l500.png",
+              "https://i.ebayimg.com/images/g/UtwAAOSwl4Fk4y0a/s-l500.png"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 18.09
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 13
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 23.33
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 1953.16
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 1367.72
+              }
+            ]
+          },
+          {
+            "id": "barbecue-shredder",
+            "name": "Barbecue Shredder",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/RkUAAOSwsbFfs1e2/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/B68AAOSw4gRfs1fG/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/1ewAAOSwVYZfs1fg/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/KyYAAOSwSRlfs1fu/s-l500.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 13.26
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 9.53
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 17.11
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 1432.31
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 1002.99
+              }
+            ]
+          },
+          {
+            "id": "grill-cover",
+            "name": "Heavy Duty Grill Cover",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/ltAAAOSwgFBksnI~/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/O-QAAOSwL1VksnJC/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/GBkAAOSwHelksnJE/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/OckAAOSwIGxksnJM/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 38.58
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 27.73
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 49.77
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 4166.73
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 2917.8
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "kitchen",
+        "products": [
+          {
+            "id": "bakeware-set",
+            "name": "Bakeware Set",
+            "inStock": true,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/SgcAAOSwDLFk8Oyq/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/5bwAAOSwdcJk8Oys/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/r~MAAOSwhh1k8Oyt/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/B7oAAOSwGJdk8Oyu/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 42.2
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 30.33
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 54.44
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 4557.36
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 3191.35
+              }
+            ]
+          },
+          {
+            "id": "cookware-set",
+            "name": "Cookware Set",
+            "inStock": true,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/TPoAAOSwjVhj4~xN/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/eIQAAOSw3oBj4~xN/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/7jkAAOSwcl1j4~xN/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/M4gAAOSwVC1j4~xN/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 566.7
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 407.34
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 731.04
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 61198.87
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 42855.21
+              }
+            ]
+          },
+          {
+            "id": "glass-storage-set",
+            "name": "Glass Storage Set",
+            "inStock": true,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/~1YAAOSwUIle-3aj/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/Iu8AAOSwyoJe-3ak/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/NJEAAOSw4~pe-3aj/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/fxwAAOSwdCVe-3aj/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 50.64
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 36.4
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 65.33
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 5468.84
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 3829.61
+              }
+            ]
+          },
+          {
+            "id": "bread-box",
+            "name": "Bread Box",
+            "inStock": false,
+            "brand": "Kitchen Deals",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/jWAAAOSwDoFk9aci/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/QG8AAOSw3R5k9aci/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/YlcAAOSwpexk9ach/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/EMEAAOSwjKBk9ach/s-l500.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 333.99
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 240.07
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 430.85
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 36068.27
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 25257.22
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "gadgets",
+        "products": [
+          {
+            "id": "eletric-grinders",
+            "name": "Eletric Grinders",
+            "inStock": true,
+            "brand": "Kitchen Gadgets",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/aHQAAOSwT7Bi178n/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/O6IAAOSwxIZi178s/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/KywAAOSwrkNi178u/s-l1600.jpg  ",
+              "https://i.ebayimg.com/images/g/9AUAAOSw7Pti178x/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 24.11
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 17.33
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 31.11
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 2604.21
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 1823.63
+              }
+            ]
+          },
+          {
+            "id": "manual-juicer-hand-press",
+            "name": "Manual Juicer Hand Press",
+            "inStock": false,
+            "brand": "Kitchen Gadgets",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/IJgAAOSwp2lg0uY5/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/8CcAAOSwIj9g0uYw/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/9MAAAOSwoPRjkDwo/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/HMoAAOSw3NBfRh~h/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 78.37
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 56.33
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 101.1
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 8463.67
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 5926.78
+              }
+            ]
+          },
+          {
+            "id": "electric-dumpling-machine",
+            "name": "Electric Dumpling Machine",
+            "inStock": true,
+            "brand": "Kitchen Gadgets",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/DhMAAOSwOZ5kzNUa/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/uKwAAOSw-~FkzNUe/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/UloAAOSw69pkzNUh/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/4mYAAOSwoJ5kzNUk/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 120.57
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 86.67
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 155.54
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 13021.04
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 9118.13
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "barbecue",
+        "products": [
+          {
+            "id": "electric-meat-grinder",
+            "name": "Electric Meat Grinder",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/KoIAAOSwxLxjXNf3/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/hYoAAOSwJ-tjXNf2/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/LjUAAOSwmmhjXNf2/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/oicAAOSwdjZjXNf2/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/em0AAOSwwXdjXNf3/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 253.2
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 182
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 326.64
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 27344.18
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 19148.07
+              }
+            ]
+          },
+          {
+            "id": "melting-dome",
+            "name": "Melting Dome",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/7~gAAOSwH9Zk4y0X/s-l500.png",
+              "https://i.ebayimg.com/images/g/UtwAAOSwl4Fk4y0a/s-l500.png"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 18.09
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 13
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 23.33
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 1953.16
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 1367.72
+              }
+            ]
+          },
+          {
+            "id": "barbecue-shredder",
+            "name": "Barbecue Shredder",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/RkUAAOSwsbFfs1e2/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/B68AAOSw4gRfs1fG/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/1ewAAOSwVYZfs1fg/s-l500.jpg",
+              "https://i.ebayimg.com/images/g/KyYAAOSwSRlfs1fu/s-l500.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 13.26
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 9.53
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 17.11
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 1432.31
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 1002.99
+              }
+            ]
+          },
+          {
+            "id": "grill-cover",
+            "name": "Heavy Duty Grill Cover",
+            "inStock": true,
+            "brand": "BBC Appliances",
+            "gallery": [
+              "https://i.ebayimg.com/images/g/ltAAAOSwgFBksnI~/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/O-QAAOSwL1VksnJC/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/GBkAAOSwHelksnJE/s-l1600.jpg",
+              "https://i.ebayimg.com/images/g/OckAAOSwIGxksnJM/s-l1600.jpg"
+            ],
+            "prices": [
+              {
+                "currency": {
+                  "label": "USD",
+                  "symbol": "$"
+                },
+                "amount": 38.58
+              },
+              {
+                "currency": {
+                  "label": "GBP",
+                  "symbol": "£"
+                },
+                "amount": 27.73
+              },
+              {
+                "currency": {
+                  "label": "AUD",
+                  "symbol": "A$"
+                },
+                "amount": 49.77
+              },
+              {
+                "currency": {
+                  "label": "JPY",
+                  "symbol": "¥"
+                },
+                "amount": 4166.73
+              },
+              {
+                "currency": {
+                  "label": "RUB",
+                  "symbol": "₽"
+                },
+                "amount": 2917.8
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
