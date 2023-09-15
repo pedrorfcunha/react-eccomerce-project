@@ -12,7 +12,7 @@ import NavCartLogo from '../../components/nav-cart-logo/nav-cart-logo.component'
 import CurrencySwitcherDropdown from '../../components/currency-switcher-dropdown/currency-switcher-dropdown.component';
 import CurrencyModal from '../../components/currency-modal/currency-modal.component';
 
-import { ReactComponent as ShopLogo } from './../../assets/shoplogo.svg';
+import { ReactComponent as CookLogo } from './../../assets/cooklogo.svg';
 
 import './navigation.styles.scss';
 
@@ -54,7 +54,7 @@ const Navigation = () => {
         </div>
         <div onClick={() => setSelectedPage('')}>
           <Link className="logo-container" to="/">
-            <ShopLogo />
+            <CookLogo className="cook-logo" />
           </Link>
         </div>
         <div className="actions-container">
