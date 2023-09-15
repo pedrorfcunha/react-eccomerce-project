@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -31,7 +30,7 @@ const ProductsContainer = () => {
 
   return (
     <>
-      <h1 className="category-name">{category}</h1>
+      {category ? <h1 className="category-name">{category}</h1> : <h1 className="website-name">KitchenKrafters.com</h1>}
       <div className="products-container">
         {products.map(product => (
           <ProductItem key={product.id} product={product} />
